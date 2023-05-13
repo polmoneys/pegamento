@@ -1,6 +1,9 @@
 ## TLDR
 
-Interfaces are made of a wild combination of materials. Some [glue](https://github.com/polmoneys/tmk) for you.
+Interfaces are made of a **wild combination of materials**. Glue for your next layouts. 
+
+Demo [for your delight](https://polmoneys.github.io/pegamento).
+
 
 ### Mental model 
 
