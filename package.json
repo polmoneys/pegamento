@@ -1,0 +1,10 @@
+{
+  "name": "pegamento",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "package",
+      "stories"
+    ]
+  }
+}

@@ -1,0 +1,207 @@
+/* V1 */
+
+[data-group] {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  font-synthesis: none;
+
+  isolation: isolate;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  --space: 0.5em;
+  --comfy-height: max(36px, 2em);
+}
+
+@media (orientation: landscape) {
+  [data-group] {
+    --comfy-height: auto;
+  }
+}
+
+/* Variants */
+[data-group='grid'] {
+  display: grid;
+}
+
+[data-group='flex'] {
+  display: flex;
+}
+
+[data-flex-grow] {
+  flex-grow: 1;
+}
+
+/* Margin auto */
+[data-m-auto='t'] {
+  margin-top: auto;
+}
+[data-m-auto='b'] {
+  margin-bottom: auto;
+}
+[data-m-auto='l'] {
+  margin-left: auto;
+}
+[data-m-auto='r'] {
+  margin-right: auto;
+}
+
+/* Padding  */
+[data-padding='xy'] {
+  padding: var(--space);
+}
+[data-padding='x'] {
+  padding-left: var(--space);
+  padding-right: var(--space);
+}
+[data-padding='y'] {
+  padding-bottom: var(--space);
+  padding-top: var(--space);
+}
+
+/* Ratio */
+[data-ratio] {
+  width: 100%;
+}
+[data-ratio='auto'] {
+  aspect-ratio: auto;
+}
+[data-ratio='square'] {
+  aspect-ratio: 1;
+}
+[data-ratio='landscape'] {
+  aspect-ratio: 16/9;
+}
+[data-ratio='portrait'] {
+  aspect-ratio: 9/16;
+}
+[data-ratio='ultrawide'] {
+  aspect-ratio: 18/5;
+}
+
+/* Borders as shadows */
+[data-border='outset'] {
+  box-shadow: 0 0 0 2px #000;
+}
+[data-border='inset'] {
+  box-shadow: inset 0 0 0 2px #000;
+}
+[data-border='l'] {
+  box-shadow: inset 2px 0 0 0 #000;
+}
+[data-border='r'] {
+  box-shadow: inset -2px 0 0 0 #000;
+}
+[data-border='t'] {
+  box-shadow: inset 0 2px 0 0 #000;
+}
+[data-border='b'] {
+  box-shadow: inset 0 -2px 0 0 #000;
+}
+
+/* Placements
+*/
+[data-place-items='center'] {
+  place-items: center;
+}
+[data-place-items='start'] {
+  place-items: start;
+}
+[data-place-items='end'] {
+  place-items: end;
+}
+[data-place-content='center'] {
+  place-content: center;
+}
+[data-place-content='start'] {
+  place-content: start;
+}
+[data-place-content='end'] {
+  place-content: end;
+}
+
+/* Stack */
+[data-stack] {
+  width: fit-content;
+  display: grid;
+  grid-template-areas: stack;
+}
+[data-stack] > * {
+  grid-area: stack;
+}
+[data-stack] > *:first-child {
+  position: relative;
+}
+[data-stack] > *[aria-hidden='true'] {
+  visibility: hidden !important;
+}
+
+/* Fit */
+[data-fit='width'] {
+  width: fit-content;
+}
+[data-fit='min-width'] {
+  min-width: 0;
+}
+[data-fit='max-width'] {
+  width: max-content;
+}
+[data-fit='height'] {
+  height: fit-content;
+}
+[data-fit='min-height'] {
+  min-height: 0;
+}
+
+/* Mask */
+
+[data-mask-text='x'] {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 15%,
+    #000 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 15%,
+    #000 85%,
+    transparent 100%
+  );
+}
+[data-mask-text='y'] {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000);
+  mask-image: linear-gradient(to bottom, transparent, #000);
+}
+
+/* Utils */
+[data-util='dead'] {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+[data-util='offscreen'] {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+[data-util='invisible'] {
+  xpointer-events: auto;
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
