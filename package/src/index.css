@@ -180,6 +180,10 @@
   mask-image: linear-gradient(to bottom, transparent, #000);
 }
 
+[data-mask-any='y'] {
+  border-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)) 50%/50%;
+}
+
 /* Utils */
 [data-util='dead'] {
   pointer-events: none;

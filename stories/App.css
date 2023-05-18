@@ -21,6 +21,16 @@ h1 {
   font-weight: 800;
 }
 
+h1 {
+  text-wrap: balance;
+  width: fit-content;
+}
+
+.text {
+  hyphens: auto;
+  word-break: break-word;
+}
+
 :is(a, button) {
   cursor: pointer;
 }
@@ -101,10 +111,15 @@ input::-webkit-input-placeholder {
 
 /* 
 
-Hide warning block in case :has() support is detected
-@supports selector(: has(*)) {
-  .no-has-support {
-    display: none;
+@supports not (selector(:has(*))) {
+  .card h2 + p {
+    margin-top: var(--gap-3);
+  }
+}
+@supports selector(:has(*)) {
+  .card h2:has(+ p) {
+  }
+  .card:has(img) {
   }
 }
 
